@@ -1,0 +1,46 @@
+<h1>New Game Preview</h1>
+<h2>{{videogameData.name}}</h2>
+{{#if videogameData.boxart}}
+<img src="{{videogameData.boxart}}" alt="{{videogameData.name}}"/>
+{{else}}
+<img src="../../public/no-image.jpeg" alt="no-image"/>
+{{/if}}
+<dl>
+    <dt>
+        Developer
+    </dt>
+    <dd>
+        {{videogameData.developer}}
+    </dd>
+    <dt>
+        Release Date
+    </dt>
+    <dd>
+        {{videogameData.releaseDate}}
+    </dd>
+    <dt>
+        Genre
+    </dt>
+    <dd>
+        {{videogameData.genre}}
+    </dd>
+    <dt>
+        Price
+    </dt>
+    <dd>
+        {{videogameData.price}}
+    </dd>
+    <dt>
+        Total Votes
+    </dt>
+    <dd>
+        {{videogameData.totalVotes}}
+    </dd>
+    <dt>
+        Average User Rating
+    </dt>
+    <dd>
+        {{videogameData.averageUserRating}}
+    </dd>
+</dl>
+<a href={{videogameData._id}}>Go to game page</a>

@@ -1,0 +1,12 @@
+STEPS TO SETUP:
+    1. Run 'npm install' at the root of the project
+    2. If first time running application, run 'npm run seed' at the root of the project to seed the database
+    3. Run 'npm start' at the root of the project to start the server
+    4. Visit http://localhost:3000 to enter website
+    5. Either use username: "admin" and password: "password" to utilize a seeded admin account, or create your own
+       by clicking on 'signup' button in navigation bar, or traveling to http://localhost:3000/signup, and creating
+       your own personal account there.
+    6. Explore and enjoy the website!
+
+GITHUB REPOSITORY:
+    https://github.com/PaulGurman/CS-546-Final-Project

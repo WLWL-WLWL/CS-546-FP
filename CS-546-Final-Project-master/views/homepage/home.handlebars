@@ -1,0 +1,74 @@
+<h1>
+    Videogames Rating
+</h1>
+<div id="intro">This is a videogames rating website where a user must choose between two video games at a time. The
+    user's choice
+    stands as games are cycled out after each vote.
+    This website provides a unique, fun, and simple way of ranking video games, showing the most preferred video game of
+    all time!</div>
+
+<form method="get" action="/rating" id="start-rating">
+    <button type="submit">Start Rating</button>
+</form>
+
+{{!-- search bar --}}
+<div class="search-head">
+    <div id="error" class="alert alert-primary" role="alert" hidden></div>
+
+    <form id="myForm">
+        <label for="searchTerm"></label>
+        <input type="text" id="searchTerm" placeholder="Search Videogames Here">
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="search-result" hidden>
+    </div>
+
+    <div class="no-result" id="no-result" hidden>
+        <p>No videogames with this name!</p>
+        <p> Please try again!</p>
+    </div>
+</div>
+
+
+
+
+{{!-- videogames list --}}
+<div class="videogames-heading">
+    <div class="videogames-title">
+        <p>Videogames List</p>
+    </div>
+    <div class="filter">
+        <div class="sort-btn">
+            <button onclick="descendingSort()" class="btn">High to Low</button>
+            <button onClick="ascendingSort()" class="btn">Low to High</button>
+        </div>
+    </div>
+
+</div>
+
+<div id="videogame-list">
+    {{#each videogames}}
+    <div class="card">
+        <div class="videogame-img" title="{{this.name}}">
+            <img src="{{this.boxart}}" alt="{{this.name}}">
+        </div>
+        <div class="videogame-text">
+            <div class="name">
+                <a href="/videogames/{{this._id}}" title="Click to learn more">{{this.name}}</a>
+                <span hidden>{{this._id}}</span>
+            </div>
+            <div class="score">
+                <p> {{this.averageUserRating}}</p>
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+</div>
+<p>This is a web application of CS-546 Group 3!</p>
+
+<div id="modal" style="display: none;">
+</div>
+
+<script src="/public/js/videogameList.js"></script>

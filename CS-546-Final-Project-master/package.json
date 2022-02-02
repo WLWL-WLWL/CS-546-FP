@@ -1,0 +1,28 @@
+{
+  "name": "cs-546-final-project",
+  "version": "1.0.0",
+  "description": "Video Game Rating Site",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "seed": "node ./tasks/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulGurman/CS-546-Final-Project.git"
+  },
+  "author": "Paul Gurman 10433412",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulGurman/CS-546-Final-Project/issues"
+  },
+  "homepage": "https://github.com/PaulGurman/CS-546-Final-Project#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.2.0",
+    "xss": "^1.0.10"
+  }
+}

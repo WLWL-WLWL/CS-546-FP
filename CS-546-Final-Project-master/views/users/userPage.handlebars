@@ -1,0 +1,17 @@
+<div id="userInfo">
+    <h1>{{userData.username}}</h1>
+    <p>Full Name: {{userData.firstname}} {{userData.lastname}}</p>
+    <p>Number of Total Ratings: {{userData.numberOfVotes}}</p>
+<h2>Rating History</h2>
+<ul>
+    {{#each gameList}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+<h2>Genre Stats</h2>
+<ol>
+    {{#each genreStats}}
+    <li>{{@key}}: {{this}}%</li>
+    {{/each}}
+</ol>
+</div>

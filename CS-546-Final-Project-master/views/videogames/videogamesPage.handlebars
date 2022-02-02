@@ -1,0 +1,91 @@
+<div id="gameInfo">
+<h1>{{videogameData.name}}</h1>
+{{#if videogameData.boxart}}
+<img src="{{videogameData.boxart}}" alt="{{videogameData.name}}" />
+{{else}}
+<img src="../../public/no-image.jpeg" alt="{{videogameData.name}} box art"/>
+{{/if}}
+<dl>
+    <dt>
+        Developer
+    </dt>
+    <dd>
+        {{videogameData.developer}}
+    </dd>
+    <dt>
+        Release Date
+    </dt>
+    <dd>
+        {{videogameData.releaseDate}}
+    </dd>
+    <dt>
+        Genre
+    </dt>
+    <dd>
+        {{videogameData.genre}}
+    </dd>
+    <dt>
+        Price
+    </dt>
+    <dd>
+        {{videogameData.price}}
+    </dd>
+    <dt>
+        Total Ratings
+    </dt>
+    <dd>
+        {{videogameData.totalVotes}}
+    </dd>
+    <dt>
+        Average User Rating
+    </dt>
+    <dd>
+        {{videogameData.averageUserRating}}
+    </dd>
+</dl>
+</div>
+
+<div id="comment-container">
+    <h2>
+        Comments
+    </h2>
+    <ul id='comment-section'>
+        {{#each videogameData.comments}}
+        <li>
+            <div class='comment' data-comment-id='{{_id}}'>
+                <p>{{title}}</p>
+                <p>{{reviewer}}, {{date}}</p>
+                <p>{{comment}}</p>
+                <button class="like-button">Like</button>
+                <button class="dislike-button">Dislike</button>
+                <p class="like-count">Likes: {{likes}}</p>
+                <p class="dislike-count">Dislikes: {{dislikes}}</p>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+
+    {{#if userLoggedIn}}
+    <p id='missing-input-message' hidden='true'>Please fill out all fields</p>
+    <form id="new-comment" method="post" action="/comments">
+        <label for="title-input">Title</label>
+        <input id="title-input" name="title-input">
+        <label for="comment-text-area">New Comment</label>
+        <textarea id="comment-text-area" name="text-area"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    {{else}}
+    <form method="get" action="/login">
+        <button type="submit">Log In/Sign Up to Comment</button>
+    </form>
+    {{/if}}
+</div>
+<script 
+    src="https://code.jquery.com/jquery-2.2.4.min.js" 
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous">
+</script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+
+<script src="../../public/js/comment.js" data-userId="{{userId}}" data-username="{{username}}"></script>
